@@ -2,9 +2,10 @@
   "name": "monading",
   "version": "0.0.0",
   "description": "Implementation of common monads in javascript",
-  "main": "src/index.js",
+  "main": "dist/main.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -16,10 +17,19 @@
     "maybe",
     "learning"
   ],
-  "author": "Pedro de Jesus",
+  "author": "Pedro de Jesus <pedro.henrique.108@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pedro108/monading/issues"
   },
-  "homepage": "https://github.com/pedro108/monading#readme"
+  "homepage": "https://github.com/pedro108/monading#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
 }
