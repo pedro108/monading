@@ -1,0 +1,25 @@
+{
+  "name": "monading",
+  "version": "0.0.0",
+  "description": "Implementation of common monads in javascript",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedro108/monading.git"
+  },
+  "keywords": [
+    "monads",
+    "javascript",
+    "maybe",
+    "learning"
+  ],
+  "author": "Pedro de Jesus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pedro108/monading/issues"
+  },
+  "homepage": "https://github.com/pedro108/monading#readme"
+}
