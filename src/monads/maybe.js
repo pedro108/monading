@@ -3,17 +3,19 @@ import Monad from './monad'
 const Nothing = Symbol('Nothing')
 
 const Maybe = Monad({
-  isInvalid: (v) => (v === null || v === undefined),
+  unit(value) {
+    return (value === null || value === undefined) ? Nothing : value
+  },
   empty: Nothing,
   type: Symbol('Maybe'),
   operations: {
-    orElse(monad) {
+    orElse(context) {
       return function (defaultValue) {
-        if (monad.isEmpty()) {
+        if (context.isEmpty()) {
           return defaultValue
         }
 
-        return monad.value
+        return context.value
       }
     }
   }

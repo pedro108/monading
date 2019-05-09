@@ -1,17 +1,13 @@
-export default function Monad({ isInvalid, empty, type, operations = {} }) {
+export default function Monad({ unit, empty, type, operations = {} }) {
   const monad = function(v) {
-    const _v = unit(v)
+    const _v = _unit(v)
 
-    function unit(v) {
-      if (typeof isInvalid === 'function' && isInvalid(v)) {
-        return empty
-      }
-
+    function _unit(v) {
       if (v && v.__type__ === type) {
         return v.flatten()
       }
 
-      return v
+      return unit(v)
     }
 
     function isEmpty() {
@@ -26,7 +22,7 @@ export default function Monad({ isInvalid, empty, type, operations = {} }) {
       return monad.of(f(_v))
     }
 
-    function flatten() {
+    function value() {
       return _v
     }
 
@@ -45,7 +41,7 @@ export default function Monad({ isInvalid, empty, type, operations = {} }) {
 
     return {
       bind,
-      flatten,
+      value,
       ...bindOperations(),
       __type__: type,
     }
